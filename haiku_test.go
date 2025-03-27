@@ -117,6 +117,14 @@ Memory held tight, swept away in quiet dusk, Go frees what I leave.`
 another waits in silence,
 they meet, work is done`, out[2].String())
 	}
+
+	h := Find("haiku can be found wherever you are looking with help of some code")
+	if assert.Len(t, h, 1) {
+		assert.Equal(t, `haiku can be found
+wherever you are looking
+with help of some code`, h[0].String())
+	}
+
 }
 
 func FuzzHaikuFromSentence(f *testing.F) {
